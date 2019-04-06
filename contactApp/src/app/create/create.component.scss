@@ -8,10 +8,14 @@ label {
         padding: 1em;
     }
 
+    input:hover {
+        border-color: #00A8FF;
+    }
+
     .error {
         margin-top: -20px;
-        background: yellow;
-        padding: .5em;
+        color: red;
+        padding: .2em;
         display: inline-block;
         font-size: .9em;
         margin-bottom: 20px;
@@ -32,7 +36,7 @@ label {
 
 .results {
     margin-top: 50px;
-
+    
     strong {
         display: block;
     }
@@ -40,4 +44,11 @@ label {
         margin-bottom: 20px;
         display: block;
     }
+}
+
+h3 {
+    background-color: rgb(31, 43, 49);
+    color: aliceblue;
+    text-align: center;
+    border-radius: 4px;
 }

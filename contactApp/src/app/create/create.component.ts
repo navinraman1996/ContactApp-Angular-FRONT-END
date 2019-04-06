@@ -15,14 +15,15 @@ export class CreateComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private Data: DataService ) {
     this.contactForm = this.formBuilder.group ({
-      fname: ['', Validators.required],
-      lname: ['', Validators.required],
-      email: ['', Validators.required],
-      number: ['', Validators.required, Validators.minLength(10)]
+      fname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
+      lname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
+      email: ['', [Validators.required, Validators.email]],
+      number: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]]
     });
   }
 
   onSubmit() {
+ 
     this.submitted =true;
 
     if(this.contactForm.invalid) {
@@ -34,6 +35,9 @@ export class CreateComponent implements OnInit {
     console.log(this.contactForm.value);
 
     this.Data.postContact(this.contactForm.value).subscribe(Response => {console.log("success" , Response)});
+    this.contactForm.updateValueAndValidity();
+    this.contactForm.reset();
+    
   }
 
   ngOnInit() {

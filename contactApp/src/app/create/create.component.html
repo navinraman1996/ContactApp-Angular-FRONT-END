@@ -2,40 +2,44 @@
 
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
-  <h3 *ngIf="success">New contact has been added!</h3>
-
   <label>
-    First Name:
-    <input type="text" formControlName="fname">
+    First Name: 
+    <input type="text" formControlName="fname" minlength="3" maxlength="15" required pattern="[A-Za-z]+">
     <div *ngIf = "submitted && contactForm.controls.fname.errors" class="error">
       <div *ngIf="contactForm.controls.fname.errors.required">First name is required</div>
+      <div *ngIf="contactForm.controls.fname.errors.minlength || contactForm.controls.fname.errors.maxlength">First name must be greater than 2 characters and less than 15 characters</div>
     </div>
   </label>
 
   <label>
     Last Name:
-    <input type="text" formControlName="lname">
+    <input type="text" formControlName="lname" minlength="3" maxlength="15" required pattern="[A-Za-z]+">
     <div *ngIf = "submitted && contactForm.controls.lname.errors" class="error">
       <div *ngIf="contactForm.controls.lname.errors.required">Last name is required</div>
+      <div *ngIf="contactForm.controls.lname.errors.minlength || contactForm.controls.lname.errors.maxlength">Last name must be greater than 2 characters and less than 15 characters</div>
     </div>
   </label>
 
   <label>
     Email Address:
-    <input type="text" formControlName="email">
+    <input type="email" formControlName="email">
     <div *ngIf = "submitted && contactForm.controls.email.errors" class="error">
       <div *ngIf="contactForm.controls.email.errors.required">Email address is required</div>
+      <div *ngIf="contactForm.controls.email.errors.email">Email must be a valid email address</div>
     </div>
   </label>
 
   <label>
     Phone Number:
-    <input type="text" formControlName="number">
+    <input type="text" formControlName="number" minlength="10" maxlength="10">
     <div *ngIf = "submitted && contactForm.controls.number.errors" class="error">
       <div *ngIf="contactForm.controls.number.errors.required">Phone number is required</div>
+      <div *ngIf="contactForm.controls.number.errors.minlength || contactForm.controls.number.errors.maxlength">Phone Number should be 10 digits</div>
     </div>
   </label>
 
   <input type="submit" value="Add Contact" class="formButton">
+
+  <h3 *ngIf="success">*********New contact has been added!*********</h3>
 
 </form>

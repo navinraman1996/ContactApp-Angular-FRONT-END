@@ -1,7 +1,8 @@
 <h1>Existing Contacts</h1>
 
 <ul>
-  <li *ngFor="let contact of contacts$">
-    <a routerLink="/{{contact._id}}">{{ contact.fname }} {{ contact.lname }}</a>
+  <!-- for each contact in the contacts list  -->
+  <li *ngFor="let contact of contacts$"> 
+    <a routerLink="/details/{{contact._id}}">{{ contact.fname }} {{ contact.lname }}</a>
   </li>
 </ul>

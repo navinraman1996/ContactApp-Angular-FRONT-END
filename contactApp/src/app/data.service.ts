@@ -9,7 +9,7 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getUsers() {
-    return this.http.get('http://localhost:3000/addressBook')
+    return this.http.get('http://localhost:3000/addressBook/')
   }
 
   getContact(id) {

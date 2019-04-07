@@ -1,37 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
 
+// styling for body
 body {
     margin: 0;
-    background: #F2F2F2;
+    background: rgba(255, 227, 86, 0.815);
     font-family: 'Montserrat', sans-serif;
     height: 100vh;
 }
 
+// styling for the contact list area
 #container {
     display: grid;
     grid-template-columns: 70px auto;
     height: 100%;
 
+    // each contact content area
     #content {
         padding: 30px 50px;
 
+        //styling for unordered list
         ul {
             list-style-type: none;
             margin:0;padding:0;
         
+            // styling for list elements
             li {
                 background: #fff;
                 border-radius: 8px;
                 padding: 20px;
                 margin-bottom: 8px;
-        
+                
+                //styling for the contact first name and last name and refering it as a link 
                 a {
                     font-size: 1.5em;
                     text-decoration: none;
                     font-weight: bold;
                     color:#00A8FF;
                 }
-        
+                
                 ul {
                     margin-top: 20px;
                     
@@ -44,6 +50,12 @@ body {
                         }
                     }
                 }
+            }
+
+            // hovering style for each contacts
+            li:hover {
+                background: rgba(0, 0, 0, 0.623);
+                border-radius: 20px;
             }
         }
     }

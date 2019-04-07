@@ -1,5 +1,6 @@
+// styling for sidebar nav list
 nav {
-    background: #2D2E2E;
+    background: rgb(0, 0, 0);
     height: 100%;
 
     ul {
@@ -15,10 +16,11 @@ nav {
                 display: block;
             }
 
-            .activated {
-                background-color: #00a8ff;
-            }
+        }
+
+        // when hovered over the list buttons
+        li:hover {
+            background-color: #00a8ff;
         }
     }
-    
 }

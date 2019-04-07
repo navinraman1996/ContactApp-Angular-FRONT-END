@@ -1,3 +1,4 @@
+// Adding style for form 
 label {
     display: block;
     
@@ -8,10 +9,12 @@ label {
         padding: 1em;
     }
 
+    // hover the mouse over each data entry
     input:hover {
         border-color: #00A8FF;
     }
 
+    // styling for error message
     .error {
         margin-top: -20px;
         color: red;
@@ -22,6 +25,7 @@ label {
     }
 }
 
+// styling for form submit button
 .formButton {
     background: #00A8FF;
     border: none;
@@ -34,18 +38,7 @@ label {
     font-family: 'Montserrat';
 }
 
-.results {
-    margin-top: 50px;
-    
-    strong {
-        display: block;
-    }
-    span {
-        margin-bottom: 20px;
-        display: block;
-    }
-}
-
+// styling for form submitted message
 h3 {
     background-color: rgb(31, 43, 49);
     color: aliceblue;
